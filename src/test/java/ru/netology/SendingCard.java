@@ -28,8 +28,6 @@ public class SendingCard {
 
     @BeforeEach
     public void setUp() {
-//        Configuration.holdBrowserOpen = true; //не закрывает браузер по оканчанию теста
-//        Configuration.browserSize = "800x750"; //размер открывающегося окна
         open("http://localhost:9999/");
     }
 
@@ -149,19 +147,6 @@ public class SendingCard {
 
         this.testInvalidName.shouldBe(visible).should(text("Имя и Фамилия указаные неверно. Допустимы только русские буквы, пробелы и дефисы."));
     }
-
-//    @Test
-//    public void shouldTestIncorrectEnterPhone() {
-//        $x("//*[@data-test-id = 'city']//input").setValue(Generate.generateCity());
-//        $("[data-test-id=date] .input__control").sendKeys(Keys.CONTROL + "A", Keys.DELETE);
-//        $("[data-test-id=date] .input__control").setValue(Generate.generateDate(3));
-//        $("[data-test-id='name'] input").setValue(Generate.generateFullName());
-//        $("[data-test-id='phone'] input").setValue(Generate.generatePhoneEror());
-//        $("[data-test-id='agreement']").click();
-//        $$(".button").filter(visible).first().click();
-//
-//        $("[data-test-id=phone].input_invalid .input__sub").shouldBe(visible).should(text("Имя и Фамилия указаные неверно. Допустимы только русские буквы, пробелы и дефисы."));
-//    }
 
     @Test
     public void shouldTestIncorrectEnterPhoneNotPlus() {
